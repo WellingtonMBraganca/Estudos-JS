@@ -9,97 +9,51 @@
 var input = require("fs").readFileSync("stdin", "utf8");
 var lines = input.split("\n");
 
-let valor,
-  nota100,
-  nota50,
-  nota20,
-  nota10,
-  nota5,
-  nota2,
-  moeda1,
-  moeda05,
-  moeda025,
-  moeda01,
-  moeda005,
-  moeda001;
+let valorInput = parseFloat(lines.shift());
 
-valor = parseFloat(lines.shift());
+let nota100 = valorInput / 100;
+console.log(`${Math.floor(nota100)} nota(s) de R$ 100.00`);
+valorInput = valorInput % 100;
 
-nota100 = Math.floor(valor / 100);
-sobrouNota100 = (valor % 100).toFixed(2);
+let nota50 = valorInput / 50;
+console.log(`${Math.floor(nota50)} nota(s) de R$ 50.00`);
+valorInput = valorInput % 50;
 
-nota50 = Math.floor(sobrouNota100 / 50);
-sobrouNota50 = (sobrouNota100 % 50).toFixed(2);
+let nota20 = valorInput / 20;
+console.log(`${Math.floor(nota20)} nota(s) de R$ 20.00`);
+valorInput = valorInput % 20;
 
-nota20 = Math.floor(sobrouNota50 / 20);
-sobrouNota20 = (sobrouNota50 % 20).toFixed(4);
+let nota10 = valorInput / 10;
+console.log(`${Math.floor(nota10)} nota(s) de R$ 10.00`);
+valorInput = valorInput % 10;
 
-nota10 = Math.floor(sobrouNota20 / 10);
-sobrouNota10 = (sobrouNota20 % 10).toFixed(2);
+let nota5 = valorInput / 5;
+console.log(`${Math.floor(nota5)} nota(s) de R$ 5.00`);
+valorInput = valorInput % 5;
 
-nota5 = Math.floor(sobrouNota10 / 5);
-sobrouNota5 = (sobrouNota10 % 5).toFixed(2);
+let nota2 = valorInput / 2;
+console.log(`${Math.floor(nota2)} nota(s) de R$ 2.00`);
+valorInput = valorInput % 2;
 
-nota2 = Math.floor(sobrouNota5 / 2);
-sobrouNota2 = (sobrouNota5 % 2).toFixed(2);
+let moeda1 = valorInput / 1;
+console.log(`${Math.floor(moeda1)} moeda(s) de R$ 1.00`);
+valorInput = valorInput % 1;
 
-moeda1 = Math.floor(sobrouNota2);
-sobrouMoeda1 = (sobrouNota2 % 1).toFixed(2);
+let moeda50 = valorInput / 0.5;
+console.log(`${Math.floor(moeda50)} moeda(s) de R$ 0.50`);
+valorInput = valorInput % 0.5;
 
-moeda05 = Math.floor(sobrouMoeda1 / 0.5);
-sobrouMoeda05 = (sobrouMoeda1 % 50).toFixed(2);
+let moeda25 = valorInput / 0.25;
+console.log(`${Math.floor(moeda25)} moeda(s) de R$ 0.25`);
+valorInput = valorInput % 0.25;
 
-moeda025 = Math.floor(sobrouMoeda05 / 0.25);
-sobrouMoeda025 = (sobrouMoeda05 % 0.25).toFixed(2);
+let moeda10 = valorInput / 0.1;
+console.log(`${Math.floor(moeda10)} moeda(s) de R$ 0.10`);
+valorInput = valorInput % 0.1;
 
-moeda01 = Math.floor(sobrouMoeda025 / 0.1);
-sobrouMoeda01 = (sobrouMoeda025 % 0.1).toFixed(2);
+let moeda05 = valorInput / 0.05;
+console.log(`${Math.floor(moeda05)} moeda(s) de R$ 0.05`);
+valorInput = valorInput % 0.05;
 
-moeda005 = Math.floor(sobrouMoeda01 / 0.05);
-moeda001 = Math.ceil(sobrouMoeda01 % 0.05);
-
-console.log("nota 100");
-console.log(nota100);
-console.log(sobrouNota100);
-
-console.log("nota 50");
-console.log(nota50);
-console.log(sobrouNota50);
-
-console.log("nota 20");
-console.log(nota20);
-console.log(sobrouNota20);
-
-console.log("nota 10");
-console.log(nota10);
-console.log(sobrouNota10);
-
-console.log("nota 5");
-console.log(nota5);
-console.log(sobrouNota5);
-
-console.log("nota2");
-console.log(nota2);
-console.log(sobrouNota2);
-
-console.log("moeda 1");
-console.log(moeda1);
-console.log(sobrouMoeda1);
-
-console.log("moeda 05");
-console.log(moeda05);
-console.log(sobrouMoeda05);
-
-console.log("moeda 025");
-console.log(moeda025);
-console.log(sobrouMoeda025);
-
-console.log("moeda 010");
-console.log(moeda01);
-console.log(sobrouMoeda01);
-
-console.log("moeda 005");
-console.log(moeda005);
-
-console.log("moeda 001");
-console.log(moeda001);
+let moeda01 = valorInput / 0.01;
+console.log(`${moeda01.toFixed(0)} moeda(s) de R$ 0.01`);
